@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Controladores</title>
+</head>
+<body ng-app>
+    <h2> Lista de Tareas</h2>
+    <div ng-controller="Vt2Ctrl">
+        <ul class="unstyled">
+            <li ng-repeat="tarea in tareas">
+                <input type="checkbox" ng-model="tarea.hecho">
+                <span class="hecho-{{tarea.hecho}}"> {{tarea.texto}}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

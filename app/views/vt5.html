@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compartir datos entre controladores utilizando fabricas</h1>
+        <hr>
+        <span class="lead text-info">Controlador Uno</span>
+        <div ng-controller="ControladorUno">
+            <input type="text" size="50" ng-model="dato.mensaje">
+            <h3>{{dato.mensaje}}</h3>
+        </div>
+    </div>
+</body>
+</html>
+

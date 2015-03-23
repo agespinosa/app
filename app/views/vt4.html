@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros en AngularJs</title>
+</head>
+
+<body ng-app>
+  <div class="container" ng-controller="Vt4Ctrl">
+     <h1>Filtros en AngularJs</h1>
+    <hr>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" class="form-control" placeholder="Ingrese los datos de busqueda" ng-model="buscar">
+        </div>
+        </div>
+        <div class="panel-body">
+             <table class="table table-condensed table-responsive">
+                <thead>
+                    <tr>
+                    <th>Código</th>
+                    <th><a href="" ng-click="ordenarPor('razonSocial')">Razon Social</a></th>  
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Saldo</th>        
+                    <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr ng-repeat="cliente in clientes | orderBy: ordenSeleccionado  | filter:buscar">
+                    <th>{{cliente.codigo}}</th>
+                    <th>{{cliente.razonSocial |uppercase}}</th>
+                    <th>{{cliente.direccion | lowercase}}</th>
+                    <th>{{cliente.telefono}}</th>
+                    <th>{{cliente.saldo | currency }}</th>        
+                    <th>{{cliente.dia | date : "short" }}</th>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+        
+    </div>
+  </div>
+    
+</body>
+</html>
+
